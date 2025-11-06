@@ -35,3 +35,18 @@ def collect_participants(num_participants):
         print(f"{i+1}. {p['name']} - {p['track']}")
 
     return participants
+# --- Task 3: Track Diversity Report ---
+def track_diversity_report(participants):
+    """Identifies and displays unique tracks, checking for variety."""
+    unique_tracks = set(p["track"] for p in participants)
+
+    if unique_tracks:
+        print("\nTracks offered in this event:")
+        print(", ".join(sorted(unique_tracks))) # Sorted for consistent display
+        if len(unique_tracks) < 2:
+            print("Not enough variety in tracks.")
+    else:
+        # This case shouldn't happen if num_participants > 0, but good for robustness
+        print("\nNo tracks were registered.")
+
+    return unique_tracks
