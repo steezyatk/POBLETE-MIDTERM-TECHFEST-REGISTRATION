@@ -15,3 +15,23 @@ def setup_registration():
         return 0
 
     return num_participants
+# --- Task 2: Collect Participant Information ---
+def collect_participants(num_participants):
+    """Collects participant names and chosen tracks."""
+    participants = []
+    for i in range(num_participants):
+        print(f"\n--- Participant {i+1} ---")
+        name = input("Enter participant name: ")
+        track = input("Enter chosen track: ")
+
+        participant_record = {
+            "name": name,
+            "track": track
+        }
+        participants.append(participant_record)
+
+    print("\nRegistered Participants:")
+    for i, p in enumerate(participants):
+        print(f"{i+1}. {p['name']} - {p['track']}")
+
+    return participants
