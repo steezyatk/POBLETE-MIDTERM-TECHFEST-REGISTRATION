@@ -2,19 +2,10 @@
 def setup_registration():
     """Displays a welcome message and prompts for the number of participants."""
     print("Welcome to SMIT TechFest!")
-    print(f"Event organized by {AUTHOR_NAME} of APPDAET {AUTHOR_SECTION}\n")
+    # Put quotes around the actual strings:
+    print(f"Event organized by {'POBLETE'} of APPDAET {'BTCS2'}\n")
 
-    try:
-        num_participants = int(input("How many participants will register? "))
-    except ValueError:
-        print("Invalid input. Please enter a valid number.")
-        return 0
-
-    if num_participants <= 0:
-        print("Invalid number of participants.")
-        return 0
-
-    return num_participants
+    # ... rest of your code
 # --- Task 2: Collect Participant Information ---
 def collect_participants(num_participants):
     """Collects participant names and chosen tracks."""
